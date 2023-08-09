@@ -63,31 +63,6 @@ class DetectiveBook extends Book {
 	}
 }
 
-const sherlock = new PrintEditionItem(
-	"Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе",
-	2019,
-	1008
-)
-
-console.log(sherlock.releaseDate)
-console.log(sherlock.state)
-sherlock.fix()
-console.log(sherlock.state)
-
-const picknick = new FantasticBook(
-	"Аркадий и Борис Стругацкие",
-	"Пикник на обочине",
-	1972,
-	168
-)
-
-// проверка
-console.log(picknick.author)
-picknick.state = 10
-console.log(picknick.state)
-picknick.fix()
-console.log(picknick.state)
-
 // Задача 2. Библиотека
 class Library {
 	constructor(name) {
@@ -121,31 +96,3 @@ class Library {
 		return null
 	}
 }
-
-const library = new Library("Библиотека имени Ленина")
-
-library.addBook(
-	new DetectiveBook(
-		"Артур Конан Дойл",
-		"Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе",
-		2019,
-		1008
-	)
-)
-library.addBook(
-	new FantasticBook(
-		"Аркадий и Борис Стругацкие",
-		"Пикник на обочине",
-		1972,
-		168
-	)
-)
-library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138))
-library.addBook(new Magazine("Мурзилка", 1919, 60))
-// проверка
-console.log(library.findBookBy("name", "Властелин колец"))
-console.log(library.findBookBy("releaseDate", 1919).name)
-
-console.log("Количество книг до выдачи: " + library.books.length)
-library.giveBookByName("Машина времени")
-console.log("Количество книг после выдачи: " + library.books.length)
